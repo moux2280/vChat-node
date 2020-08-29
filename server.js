@@ -25,5 +25,5 @@ io.on('connection',socket=>{
         })
     })
 })
-
-server.listen(3000)
+const port = process.env.port || 3000
+server.listen(port)
