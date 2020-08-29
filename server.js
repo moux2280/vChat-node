@@ -19,7 +19,6 @@ io.on('connection',socket=>{
     socket.on('join-room',(roomId,userId)=>{
         socket.join(roomId)
         socket.to(roomId).broadcast.emit('user-connected',userId)
-
         socket.on('disconnect',()=>{
             socket.to(roomId).broadcast.emit('user-disconnected',userId)
         })
@@ -27,5 +26,5 @@ io.on('connection',socket=>{
 })
 const port = process.env.port || 3000
 server.listen(port,()=>{
-    print("bad boy")
+    console.log("bad boy")
 })
